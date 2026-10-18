@@ -1,0 +1,23 @@
+# 依赖
+node_modules/
+
+# 自检产物
+verify/
+
+# GeoGebra 官方离线包：体积大且不是本仓库的代码，按 README 自行下载
+geogebra-math-apps-bundle/
+*.zip
+
+# npm 生成的锁文件（本仓库以 pnpm-lock.yaml 为准）
+package-lock.json
+
+# 日志与临时文件
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# 编辑器 / 系统
+.DS_Store
+.idea/
+.vscode/
+*.swp

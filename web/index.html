@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GeoGebra 桥 · 查看器</title>
+<style>
+	:root {
+		--bridge-bg: #11161d;
+		--bridge-fg: #e8eef6;
+		--bridge-ok: #2ea043;
+		--bridge-bad: #d29922;
+	}
+	html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #fff; }
+	#ggb-element { position: absolute; inset: 0; }
+	#bridge-badge {
+		position: fixed; right: 10px; top: 10px; z-index: 20;
+		display: flex; align-items: center; gap: 6px;
+		padding: 5px 10px; border-radius: 999px;
+		background: rgba(17, 22, 29, 0.86); color: var(--bridge-fg);
+		font: 12px/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+		pointer-events: none; user-select: none;
+	}
+	#bridge-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--bridge-bad); }
+	#bridge-badge.ok .dot { background: var(--bridge-ok); }
+	#bridge-error {
+		position: fixed; left: 12px; bottom: 12px; right: 12px; z-index: 30;
+		padding: 12px 14px; border-radius: 8px; border: 1px solid #d29922;
+		background: #fff8e6; color: #3d2c00;
+		font: 13px/1.6 ui-sans-serif, system-ui, "Noto Sans CJK SC", sans-serif;
+		white-space: pre-wrap;
+	}
+</style>
+</head>
+<body>
+<div id="ggb-element"></div>
+<div id="bridge-badge"><span class="dot"></span><span id="bridge-badge-text">正在连接桥…</span></div>
+<div id="bridge-error" hidden></div>
+
+<!-- GeoGebra 离线内核由本桥的 HTTP 服务从 --ggb-root 提供 -->
+<script src="/GeoGebra/deployggb.js"></script>
+<script src="/client.js"></script>
+</body>
+</html>
