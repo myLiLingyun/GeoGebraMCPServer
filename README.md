@@ -120,7 +120,7 @@ node test/list-tools.mjs
 要连真浏览器和真 GeoGebra 再跑：
 
 ```bash
-node test/e2e-browser.mjs       # 需要 firefox；产物写到 server/verify/
+node test/e2e-browser.mjs       # 需要 firefox；产物写到 ./verify/
 ```
 
 ## 接到 MCP 客户端
